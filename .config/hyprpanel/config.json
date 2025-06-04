@@ -76,6 +76,22 @@
         "clock",
         "notifications"
       ]
+    },
+    "3": {
+      "left": [
+        "dashboard",
+        "workspaces"
+      ],
+      "middle": [],
+      "right": [
+        "volume",
+        "network",
+        "bluetooth",
+        "battery",
+        "systray",
+        "clock",
+        "notifications"
+      ]
     }
   },
   "bar.network.label": false,
@@ -101,8 +117,8 @@
   "log_subprocesses_to_journal": false,
   "menus.clock.time.hideSeconds": false,
   "menus.clock.time.military": true,
-  "menus.clock.weather.enabled": false,
-  "menus.clock.weather.key": ".config/.wak.json",
+  "menus.clock.weather.enabled": true,
+  "menus.clock.weather.key": "6247aae2673e461289b192057251305",
   "menus.clock.weather.location": "Warsaw",
   "menus.clock.weather.unit": "metric",
   "menus.dashboard.directories.enabled": false,
@@ -119,7 +135,7 @@
   "menus.transition": "crossfade",
   "menus.transitionTime": 300,
   "menus.volume.raiseMaximumVolume": true,
-  "notifications.autoDismiss": true,
+  "notifications.autoDismiss": false,
   "notifications.displayedTotal": 6,
   "scalingPriority": "hyprland",
   "theme.bar.background": "#232634",
@@ -302,9 +318,10 @@
   "theme.bar.buttons.workspaces.pill.width": "4em",
   "theme.bar.enableShadow": false,
   "theme.bar.floating": true,
-  "theme.bar.location": "top",
-  "theme.bar.margin_sides": "0px",
-  "theme.bar.margin_top": "0em",
+  "theme.bar.location": "bottom",
+  "theme.bar.margin_sides": "-12px",
+  "theme.bar.margin_top": "-2px",
+  "theme.bar.margin_bottom": "8px",
   "theme.bar.menus.background": "#232634",
   "theme.bar.menus.border.color": "#414559",
   "theme.bar.menus.border.radius": "0.9em",
@@ -538,7 +555,7 @@
   "theme.bar.menus.tooltip.background": "#232634",
   "theme.bar.menus.tooltip.text": "#c6d0f5",
   "theme.bar.opacity": 90,
-  "theme.bar.scaling": 100,
+  "theme.bar.scaling": 90,
   "theme.bar.transparent": true,
   "theme.font.label": "CaskaydiaCove Nerd Font Light",
   "theme.font.name": "CaskaydiaCove Nerd Font",
