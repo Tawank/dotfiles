@@ -1,7 +1,7 @@
 {
   "bar.autoHide": "never",
   "bar.bluetooth.label": false,
-  "bar.clock.format": "%d-%m-%Y %H:%M",
+  "bar.clock.format": "%d-%m-%Y  %H:%M",
   "bar.customModules.cava.autoSensitivity": true,
   "bar.customModules.cava.barCharacters": [
     "▁",
@@ -24,6 +24,7 @@
   "bar.customModules.netstat.rateUnit": "MiB",
   "bar.customModules.netstat.round": true,
   "bar.customModules.weather.unit": "metric",
+  "bar.customModules.cpuTemp.icon": "",
   "bar.customModules.worldclock.tz": [
     "Europe/Europe"
   ],
@@ -39,7 +40,6 @@
         "volume",
         "network",
         "bluetooth",
-        "battery",
         "systray",
         "clock",
         "notifications"
@@ -52,10 +52,10 @@
       ],
       "middle": [],
       "right": [
+        "cputemp",
         "volume",
         "network",
         "bluetooth",
-        "battery",
         "systray",
         "clock",
         "notifications"
@@ -68,10 +68,10 @@
       ],
       "middle": [],
       "right": [
+        "cputemp",
         "volume",
         "network",
         "bluetooth",
-        "battery",
         "systray",
         "clock",
         "notifications"
@@ -87,7 +87,6 @@
         "volume",
         "network",
         "bluetooth",
-        "battery",
         "systray",
         "clock",
         "notifications"
@@ -96,7 +95,7 @@
   },
   "bar.network.label": false,
   "bar.volume.label": true,
-  "bar.volume.rightClick": "pavucontrol",
+  "bar.volume.rightClick": "pwvucontrol",
   "bar.windowtitle.leftClick": "",
   "bar.windowtitle.rightClick": "",
   "bar.workspaces.applicationIconOncePerWorkspace": true,
@@ -122,7 +121,7 @@
   "menus.clock.weather.location": "Warsaw",
   "menus.clock.weather.unit": "metric",
   "menus.dashboard.directories.enabled": false,
-  "menus.dashboard.powermenu.avatar.image": "/home/paulo/Wallpapers/astronaut.png",
+  "menus.dashboard.powermenu.avatar.image": "/home/tawang/Pictures/kola.png",
   "menus.dashboard.powermenu.avatar.name": "tawank",
   "menus.dashboard.shortcuts.left.shortcut1.command": "firefox",
   "menus.dashboard.shortcuts.left.shortcut1.icon": "󰈹",
@@ -193,7 +192,7 @@
   "theme.bar.buttons.modules.cpu.icon_background": "#e78284",
   "theme.bar.buttons.modules.cpu.text": "#e78284",
   "theme.bar.buttons.modules.cpuTemp.border": "#fab387",
-  "theme.bar.buttons.modules.cpuTemp.icon": "#181824",
+  "theme.bar.buttons.modules.cpuTemp.icon": "#fab387",
   "theme.bar.buttons.modules.cpuTemp.icon_background": "#fab387",
   "theme.bar.buttons.modules.cpuTemp.text": "#fab387",
   "theme.bar.buttons.modules.hypridle.background": "#303446",
@@ -592,7 +591,12 @@
   "theme.osd.opacity": 85,
   "theme.osd.orientation": "horizontal",
   "wallpaper.enable": false,
-  "wallpaper.image": "/home/paulo/Wallpapers/astronaut.png",
+  "wallpaper.image": "/home/tawang/Pictures/wallpaper.jpg",
   "wallpaper.pywal": false,
-  "menus.dashboard.shortcuts.enabled": false
+  "menus.dashboard.shortcuts.enabled": false,
+  "bar.customModules.storage.paths": [
+    "/"
+  ],
+  "menus.dashboard.stats.enable_gpu": false,
+  "bar.launcher.rightClick": "wofi --show drun"
 }
