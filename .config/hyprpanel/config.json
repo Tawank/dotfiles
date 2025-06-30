@@ -76,26 +76,12 @@
         "clock",
         "notifications"
       ]
-    },
-    "3": {
-      "left": [
-        "dashboard",
-        "workspaces"
-      ],
-      "middle": [],
-      "right": [
-        "volume",
-        "network",
-        "bluetooth",
-        "systray",
-        "clock",
-        "notifications"
-      ]
     }
   },
   "bar.network.label": false,
   "bar.volume.label": true,
   "bar.volume.rightClick": "pwvucontrol",
+  "bar.volume.middleClick": "systemctl --user restart wireplumber",
   "bar.windowtitle.leftClick": "",
   "bar.windowtitle.rightClick": "",
   "bar.workspaces.applicationIconOncePerWorkspace": true,
@@ -137,7 +123,7 @@
   "notifications.autoDismiss": false,
   "notifications.displayedTotal": 6,
   "scalingPriority": "hyprland",
-  "theme.bar.background": "#232634",
+  "theme.bar.background": "#000000",
   "theme.bar.border.color": "#babbf1",
   "theme.bar.border.location": "none",
   "theme.bar.border.width": "0.1em",
@@ -184,7 +170,7 @@
   "theme.bar.buttons.modules.cava.enableBorder": true,
   "theme.bar.buttons.modules.cava.icon": "#81c8be",
   "theme.bar.buttons.modules.cava.icon_background": "#303446",
-  "theme.bar.buttons.modules.cava.text": "#ffbe6f",
+  "theme.bar.buttons.modules.cava.text": "#81c8be",
   "theme.bar.buttons.modules.cpu.background": "#303446",
   "theme.bar.buttons.modules.cpu.border": "#e78284",
   "theme.bar.buttons.modules.cpu.hover": "#45475a",
@@ -329,7 +315,7 @@
   "theme.bar.menus.buttons.disabled": "#626880",
   "theme.bar.menus.buttons.text": "#232634",
   "theme.bar.menus.card_radius": "0.8em",
-  "theme.bar.menus.cards": "#1e1e2e",
+  "theme.bar.menus.cards": "#292c3c",
   "theme.bar.menus.check_radio_button.active": "#b9baf1",
   "theme.bar.menus.check_radio_button.background": "#232534",
   "theme.bar.menus.dimtext": "#626880",
