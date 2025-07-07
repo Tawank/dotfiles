@@ -8,3 +8,15 @@ git clone https://aur.archlinux.org/paru.git
 cd paru/
 makepkg -si
 
+
+## fixes
+sudo ln -s /usr/bin/kitty /usr/bin/xterm
+
+
+# install additional dependencies
+flatpak install flathub com.usebottles.bottles
+flapak install flatseal
+flatpak install flatseal
+
+sudo pacman -S gnome-characters
+

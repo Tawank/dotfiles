@@ -102,7 +102,6 @@ _comp_options+=(globdots)
 # Aliases
 alias ls='ls --color'
 alias vim='nvim' 
-alias c='clear'
 
 # Shell integrations
 eval "$(fzf --zsh)"
