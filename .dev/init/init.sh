@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # install 
-sudo pacman -S git less
+sudo pacman -S git less gcc fzf zsh nvim
 
 # install paru
 git clone https://aur.archlinux.org/paru.git
@@ -21,6 +21,7 @@ flatpak install flatseal
 sudo pacman -S gnome-characters
 
 # node:
+# fist install nvm
 npm install -g typescript typescript-language-server
 npm i -g vscode-langservers-extracted
 
