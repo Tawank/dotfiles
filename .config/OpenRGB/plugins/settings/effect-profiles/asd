@@ -1,0 +1,168 @@
+{
+    "Effects": [
+        {
+            "AllowOnlyFirst": false,
+            "AutoStart": false,
+            "Brightness": 100,
+            "ControllerZones": [],
+            "CustomName": "Tęcza",
+            "CustomSettings": {
+                "colors": [
+                    262399,
+                    15073535,
+                    16711680,
+                    5373696,
+                    65514,
+                    46079,
+                    255,
+                    255
+                ],
+                "direction": 0,
+                "height": 50,
+                "spread": 100,
+                "width": 50
+            },
+            "EffectClassName": "CustomGradientWave",
+            "FPS": 60,
+            "RandomColors": false,
+            "Slider2Val": 1,
+            "Speed": 200,
+            "Temperature": 0,
+            "Tint": 0
+        },
+        {
+            "AllowOnlyFirst": false,
+            "AutoStart": false,
+            "Brightness": 100,
+            "ControllerZones": [],
+            "CustomName": "",
+            "CustomSettings": {
+                "saturation": 255
+            },
+            "EffectClassName": "Bloom",
+            "FPS": 60,
+            "RandomColors": false,
+            "Slider2Val": 1,
+            "Speed": 100,
+            "Temperature": 0,
+            "Tint": 0
+        },
+        {
+            "AllowOnlyFirst": false,
+            "AutoStart": false,
+            "Brightness": 100,
+            "ControllerZones": [],
+            "CustomName": "",
+            "CustomSettings": {
+                "audio_settings": {
+                    "amplitude": 100,
+                    "audio_device": 6,
+                    "avg_mode": 0,
+                    "avg_size": 8,
+                    "decay": 80,
+                    "equalizer": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "filter_constant": 1.0,
+                    "nrml_ofst": 0.5,
+                    "nrml_scl": 0.5,
+                    "window_mode": 0
+                },
+                "bypass_max": 256,
+                "bypass_min": 0,
+                "fade_step": 1,
+                "hue_shift": 0,
+                "roll_mode": 1,
+                "saturation_mode": 0,
+                "silent_color": false,
+                "silent_color_value": 0
+            },
+            "EffectClassName": "AudioSync",
+            "FPS": 60,
+            "RandomColors": false,
+            "Slider2Val": 1,
+            "Speed": 1,
+            "Temperature": 0,
+            "Tint": 0
+        },
+        {
+            "AllowOnlyFirst": false,
+            "AutoStart": true,
+            "Brightness": 100,
+            "ControllerZones": [
+                {
+                    "description": "ASUS Aura USB Device",
+                    "is_segment": false,
+                    "location": "HID: /dev/hidraw3",
+                    "name": "ASUS TUF GAMING B650-E WIFI",
+                    "reverse": false,
+                    "segment_idx": -1,
+                    "self_brightness": 100,
+                    "serial": "9876543210",
+                    "vendor": "ASUS",
+                    "version": "AULA3-AR32-0309",
+                    "zone_idx": 1
+                }
+            ],
+            "CustomName": "",
+            "CustomSettings": {
+                "audio_settings": {
+                    "amplitude": 100,
+                    "audio_device": 6,
+                    "avg_mode": 0,
+                    "avg_size": 8,
+                    "decay": 80,
+                    "equalizer": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "filter_constant": 1.0,
+                    "nrml_ofst": 0.5,
+                    "nrml_scl": 0.5,
+                    "window_mode": 0
+                },
+                "color_zone_stop": 192,
+                "divisions": 4.0,
+                "effect_threshold": 0.3400000035762787,
+                "motion_zone_stop": 64
+            },
+            "EffectClassName": "AudioParty",
+            "FPS": 60,
+            "RandomColors": false,
+            "Slider2Val": 14,
+            "Speed": 100,
+            "Temperature": 0,
+            "Tint": 0
+        }
+    ],
+    "version": 2
+}
