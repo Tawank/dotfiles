@@ -17,6 +17,9 @@ key[Shift-Tab]="${terminfo[kcbt]}"
 bindkey '^[[1;5C' forward-word
 # [Ctrl-LeftArrow] - move backward one word
 bindkey '^[[1;5D' backward-word
+# [Ctrl-Backspace] [Ctrl-Delete] - delete one word
+bindkey '^H' backward-kill-word
+bindkey '5~' kill-word
 
 # setup key accordingly
 [[ -n "${key[Home]}"      ]] && bindkey -- "${key[Home]}"       beginning-of-line
@@ -71,6 +74,8 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
+zinit light Freed-Wu/fzf-tab-source
+zinit light marlonrichert/zsh-hist
 
 # Add in snippets
 zinit snippet OMZP::sudo
@@ -78,12 +83,16 @@ zinit snippet OMZP::sudo
 # Load completions 
 autoload -Uz compinit && compinit
 
+# Edit line in vim with Ctrl-E
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
+
 zinit cdreplay -q
 
 # History
-HISTSIZE=5000
+HISTSIZE=6000
+SAVEHIST=5000
 HISTFILE=~/.local/share/zsh/history
-SAVEHIST=$HISTSIZE
 setopt appendhistory
 setopt sharehistory
 setopt hist_ignore_space
@@ -92,16 +101,61 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
+# removed it because you cannot correct failed commands
+# delete-failed-history() {
+#   case $? in
+#     0|130|137)
+#       ;; # Do nothing for allowed codes
+#     *)
+#       hist -s d -1
+#       ;;
+#   esac
+# }
+# autoload -Uz add-zsh-hook
+# add-zsh-hook precmd delete-failed-history
+
+export FZF_DEFAULT_OPTS="--bind 'preview-scroll-up:preview-up+preview-up' --bind 'preview-scroll-down:preview-down+preview-down'"
+
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'cat $realpath'
+
+# git autocompletion
+zstyle ':fzf-tab:complete:git-(add|diff|restore):*' fzf-preview \
+	'git diff $realpath | delta'
+zstyle ':fzf-tab:complete:git-log:argument-1' fzf-preview \
+	'git log --color=always $word'
+zstyle ':fzf-tab:complete:git-help:*' fzf-preview \
+	'git help $word | bat -plman --color=always'
+zstyle ':fzf-tab:complete:git-show:*' fzf-preview \
+	'case "$group" in
+	"commit tag") git show --color=always $word ;;
+	*) git show --color=always $word | delta ;;
+	esac'
+zstyle ':fzf-tab:complete:git-checkout:argument-rest' fzf-preview \
+	'case "$group" in
+	"modified file") git diff $word | delta ;;
+	"recent commit object name") git show --color=always $word | delta ;;
+	*) git log --color=always $word ;;
+	esac'
+
+# fzf-tab config
+zstyle ':fzf-tab:*' prefix ''
+zstyle ':fzf-tab:*' fzf-min-height 20
+zstyle ':fzf-tab:complete:*' fzf-bindings \
+  'preview-scroll-up:preview-up+preview-up' \
+  'preview-scroll-down:preview-down+preview-down'
+
+# show hidden files in autocompletion
 _comp_options+=(globdots)
 
 # Aliases
 alias ls='ls --color'
+alias grep='grep --color=always'
 alias vim='nvim' 
+alias qts='quicktype -l typescript --just-types' 
 
 # Shell integrations
 eval "$(fzf --zsh)"

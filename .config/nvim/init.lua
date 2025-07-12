@@ -43,36 +43,21 @@ dofile(vim.g.base46_cache .. "statusline")
 require "options"
 require "autocmds"
 
-local function open_nvim_tree(data)
-  -- buffer is a real file on the disk
-  local real_file = vim.fn.filereadable(data.file) == 1
-
-  if real_file then
-    return
-  end
-
-  -- open the tree
-  require('neo-tree.command').execute({})
-end
-
 vim.schedule(function()
   require "mappings"
 end)
 
-vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
-
-if vim.fn.has('wsl') == 1 then
+if vim.fn.has "wsl" == 1 then
   vim.g.clipboard = {
-     name = 'WslClipboard',
-     copy = {
-       ['+'] = 'clip.exe',
-       ['*'] = 'clip.exe',
-     },
-     paste = {
-       ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-       ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-     },
-     cache_enabled = 0,
+    name = "WslClipboard",
+    copy = {
+      ["+"] = "clip.exe",
+      ["*"] = "clip.exe",
+    },
+    paste = {
+      ["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+      ["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    },
+    cache_enabled = 0,
   }
 end
-
